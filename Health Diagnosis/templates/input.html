@@ -1,0 +1,98 @@
+<!-- input.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Check Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Enter Blood Test Details</h2>
+    <form action="/predict" method="post">
+        <!-- Basic Information Section -->
+        <fieldset>
+            <legend>Basic Information</legend>
+            <label for="id">Patient ID:</label>
+            <input type="text" name="id" required>
+        </fieldset>
+
+        <!-- White Blood Cells Section -->
+        <fieldset>
+            <legend>White Blood Cells</legend>
+            <label for="wbc">Total WBC Count:</label>
+            <input type="number" step="0.1" name="wbc" required>
+
+            <label for="lymp">Lymphocytes (%) (LYMp):</label>
+            <input type="number" step="0.1" name="lymp" required>
+
+            <label for="midp">Mid-Cells (%) (MIDp):</label>
+            <input type="number" step="0.1" name="midp" required>
+
+            <label for="neutp">Neutrophils (%) (NEUTp):</label>
+            <input type="number" step="0.1" name="neutp" required>
+
+            <label for="lymn">Lymphocytes (Abs) (LYMn):</label>
+            <input type="number" step="0.1" name="lymn" required>
+
+            <label for="midn">Mid-Cells (Abs) (MIDn):</label>
+            <input type="number" step="0.1" name="midn" required>
+
+            <label for="neutn">Neutrophils (Abs) (NEUTn):</label>
+            <input type="number" step="0.1" name="neutn" required>
+        </fieldset>
+
+        <!-- Red Blood Cells Section -->
+        <fieldset>
+            <legend>Red Blood Cells</legend>
+            <label for="rbc">RBC Count:</label>
+            <input type="number" step="0.01" name="rbc" required>
+
+            <label for="hgb">Hemoglobin (HGB):</label>
+            <input type="number" step="0.1" name="hgb" required>
+
+            <label for="hct">Hematocrit (HCT):</label>
+            <input type="number" step="0.1" name="hct" required>
+
+            <label for="mcv">Mean Corpuscular Volume (MCV):</label>
+            <input type="number" step="0.1" name="mcv" required>
+
+            <label for="mch">Mean Corpuscular Hemoglobin (MCH):</label>
+            <input type="number" step="0.1" name="mch" required>
+
+            <label for="mchc">Mean Corpuscular Hemoglobin Concentration (MCHC):</label>
+            <input type="number" step="0.1" name="mchc" required>
+
+            <label for="rdwsd">RDW-SD:</label>
+            <input type="number" step="0.1" name="rdwsd" required>
+
+            <label for="rdwcv">RDW-CV:</label>
+            <input type="number" step="0.1" name="rdwcv" required>
+        </fieldset>
+
+        <!-- Platelets Section -->
+        <fieldset>
+            <legend>Platelets</legend>
+            <label for="plt">Platelet Count (PLT):</label>
+            <input type="number" name="plt" required>
+
+            <label for="mpv">Mean Platelet Volume (MPV):</label>
+            <input type="number" step="0.1" name="mpv" required>
+
+            <label for="pdw">Platelet Distribution Width (PDW):</label>
+            <input type="number" step="0.1" name="pdw" required>
+
+            <label for="pct">Plateletcrit (PCT):</label>
+            <input type="number" step="0.01" name="pct" required>
+
+            <label for="plcr">PLCR:</label>
+            <input type="number" step="0.1" name="plcr" required>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <button type="submit">Predict</button>
+    </form>
+</div>
+</body>
+</html>
